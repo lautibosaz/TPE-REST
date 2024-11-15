@@ -24,7 +24,10 @@ http://localhost/web2/TPE-REST/api/generos/id (Metodo POST) -> Permite editar lo
 
 ///PARA LA TABLA PELICULAS:
 
-http://localhost/web2/TPE-REST/api/peliculas (Metodo GET) -> Realiza un getAll de todas las peliculas en la DB, estas pueden filtrarse con ?genero=terror por ejemplo (si el genero no existe, salta error); pueden ordenarse con ?orderBy=titulo por ejemplo (y cualquier otro campo de la tabla exceptuando los id); el orden puede realizarse de forma ascendente o descendente  con ?direccion=ASC o ?direccion=DESC (default esta ASC).
+http://localhost/web2/TPE-REST/api/peliculas (Metodo GET) -> Realiza un getAll de todas las peliculas en la DB. Estas pueden:
+- Filtrarse con ?genero=terror por ejemplo -> (si el genero no existe, salta error).
+- Ordenarse con ?orderBy=titulo por ejemplo (y cualquier otro campo de la tabla exceptuando los id).
+- El orden puede realizarse de forma ascendente o descendente  con ?direccion=ASC o ?direccion=DESC -> (default esta ASC).
 
 http://localhost/web2/TPE-REST/api/peliculas/id (Metodo GET) -> Realiza un get de una pelicula en especifico por su id.
 
@@ -32,13 +35,13 @@ http://localhost/web2/TPE-REST/api/peliculas/id (Metodo DELETE) -> Elimina una p
 
 http://localhost/web2/TPE-REST/api/peliculas (Metodo POST) ->  Permite agregar una película. En el body debe estar definido un array del siguiente estilo: 
 {
-  "id_genero":"terror", ->(Si el genero no existe salta error).
+  "id_genero":"terror", 
   "titulo":"string",
   "director":"string",
   "descripcion":"string",
   "calificacion":"int",
   "estreno":"x/x/x"
-}
+} -> (Si el genero no existe salta error).
 
 http://localhost/web2/TPE-REST/api/peliculas/id (Metodo PUT) -> Permite editar los datos de una pelicula por su id. En el body debe estar definido un array del siguiente estilo:
 {
